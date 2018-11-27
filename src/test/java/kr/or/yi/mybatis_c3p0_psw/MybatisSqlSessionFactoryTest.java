@@ -9,14 +9,14 @@ import org.junit.Test;
 import kr.or.yi.mybatis_c3p0_psw.jdbc.MyBatisSqlSessionFactory;
 
 public class MybatisSqlSessionFactoryTest {
-	private static final Log Log = LogFactory.getLog(MybatisSqlSessionFactoryTest.class);
+	private static final Log log = LogFactory.getLog(MybatisSqlSessionFactoryTest.class);
 
 	@Test
 	public void testOpenSession() {
-		Log.debug("testOpenSession()");
+		log.debug("testOpenSession()");
 		
 		SqlSession session = MyBatisSqlSessionFactory.openSession();
-		Log.debug("session " + session);
+		log.debug("session " + session);
 		Assert.assertNotNull(session);
 	}
 

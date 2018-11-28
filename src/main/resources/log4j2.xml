@@ -3,12 +3,11 @@
 <Configuration>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="%m%n" />
+			<PatternLayout pattern="%5p [%t] - %m%n" />
 		</Console>
 
-		<File name="file" fileName="./logs/kr.or.yi.mybatis_c3p0_psw.log" append="true">
-			<PatternLayout
-				pattern="[%d{yyyy-MM-dd}] %m%n" />
+		<File name="file" fileName="./logs/kr.or.yi.mybatis_c3p0_psw.log" append="flase">
+			<PatternLayout pattern="%5p [%t] - %m%n" />
 		</File>
 	</Appenders>
 

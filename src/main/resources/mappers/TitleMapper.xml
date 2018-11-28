@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.yi.mybatis_c3p0_psw.dao.TitleDao">
 	<insert id="insertTitle" parameterType="Title">
-		INSERT INTO title (tcode, tname) VALUES(#{code}, #{name});
+		INSERT INTO title (code, name) VALUES(#{code}, #{name});
 
 	</insert>
 </mapper>

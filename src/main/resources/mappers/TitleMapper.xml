@@ -5,4 +5,20 @@
 		INSERT INTO title (code, name) VALUES(#{code}, #{name});
 
 	</insert>
+	<select id="selectedTitleByAll" resultType="Title">
+		SELECT code, name
+		FROM title
+	</select>
+	
+	<select id="selectedTitleByCode" resultType="Title" parameterType="Title">
+		select code, name from title where code = #{code}
+	</select>
+	
+	<delete id="deleteTitle">
+		delete from title where code=#{param1}
+	</delete>
+	
+	<update id="updateTitle">
+		update title set name=#{name} where code=#{code}
+	</update>
 </mapper>

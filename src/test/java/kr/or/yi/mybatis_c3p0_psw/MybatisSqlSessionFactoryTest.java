@@ -19,5 +19,7 @@ public class MybatisSqlSessionFactoryTest {
 		log.debug("session " + session);
 		Assert.assertNotNull(session);
 	}
+	
+	
 
 }

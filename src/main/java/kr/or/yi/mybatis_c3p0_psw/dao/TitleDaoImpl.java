@@ -12,14 +12,16 @@ public class TitleDaoImpl implements TitleDao {
 
 	@Override
 	public List<Title> selectedTitleByAll() {
-		// TODO Auto-generated method stub
-		return null;
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			return sqlSession.selectList(namespace + ".selectedTitleByAll");
+		}
 	}
 
 	@Override
 	public Title selectedTitleByCode(Title title) {
-		// TODO Auto-generated method stub
-		return null;
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			return sqlSession.selectOne(namespace + ".selectedTitleByCode", title);
+		}
 	}
 
 	@Override
@@ -33,14 +35,20 @@ public class TitleDaoImpl implements TitleDao {
 
 	@Override
 	public int deleteTitle(int code) {
-		// TODO Auto-generated method stub
-		return 0;
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			int res = sqlSession.delete(namespace + ".deleteTitle", code);
+					sqlSession.commit();
+			return res;
+		}
 	}
 
 	@Override
 	public int updateTitle(Title title) {
-		// TODO Auto-generated method stub
-		return 0;
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			int res = sqlSession.update(namespace + ".updateTitle", title);
+					sqlSession.commit();
+			return res;
+		}
 	}
 
 }

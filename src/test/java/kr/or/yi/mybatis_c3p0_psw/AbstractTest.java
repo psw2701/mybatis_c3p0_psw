@@ -6,7 +6,7 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.junit.AfterClass;
 
-import org.junit.Test;
+
 
 public class AbstractTest {
 	protected static final Log log = LogFactory.getLog(AbstractTest.class);
